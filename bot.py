@@ -237,7 +237,7 @@ def get_services(update: Update, context):
     update.message.reply_text(ParamikoConnection('systemctl'))
 # Вывод логов о репликации из /var/log/postgresql/
 def get_repl_logs(update: Update, context):
-    update.message.reply_text(ParamikoConnection('cat /var/log/postgresql/postgresql-14-main.log | grep -i "repl" | tail -n 10'))
+    update.message.reply_text(ParamikoConnection('cat /var/log/postgresql/postgresql.log | grep -i "repl" | tail -n 10'))
 # вывод данных из таблиц email адресов
 def get_emails(update: Update, context):
     update.message.reply_text(DbSELECT('SELECT * FROM emails;'))
